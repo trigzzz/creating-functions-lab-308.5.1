@@ -17,6 +17,24 @@
     console.log(result);
 
     // Take an array of numbers and return the average.
+
+    function averageOfNumbers(numbers) {
+        if (numbers.length === 0) {
+            return 0; 
+        }
+    
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        return sum / numbers.length;
+    }
+    
+    
+    const numbers = [1, 2, 3, 4, 5];
+    const resultAverage = averageOfNumbers(numbers);
+    console.log(resultAverage); 
+    
+
+    // Take an array of strings and return the longest string.
+
     
 
 
