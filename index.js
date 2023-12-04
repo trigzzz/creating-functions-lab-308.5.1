@@ -72,9 +72,79 @@
     printNumbersRecursive(n);
     
     
-
-
-
-
     //Part 2: Thinking Methodically
 
+    //Sort the array by age.
+
+
+    const people = [
+        { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+        { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+        { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+        { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+        { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+      ];
+      
+      const sortedByAge = people.sort((a, b) => {
+        const ageA = parseInt(a.age);
+        const ageB = parseInt(b.age);
+        
+        return ageA - ageB;
+      });
+      
+      console.log(sortedByAge);
+
+      // Filter the array to remove entries with an age greater than 50.
+
+      const people1 = [
+        { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+        { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+        { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+        { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+        { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+      ];
+      
+      const filteredByAge = people1.filter(person => parseInt(person.age) <= 50);
+      
+      console.log(filteredByAge);
+      
+      //Map the array to change the “occupation” key to “job” and increment every age by 1.
+
+      const people2 = [
+        { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+        { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+        { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+        { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+        { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+      ];
+      
+      const mappedArray = people2.map(person => ({
+        id: person.id,
+        name: person.name,
+        job: person.occupation, 
+        age: String(parseInt(person.age) + 1) 
+      }));
+      
+      console.log(mappedArray);
+      
+
+      // Use the reduce method to calculate the sum of the ages.
+
+      const people3 = [
+        { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+        { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+        { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+        { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+        { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+      ];
+      
+      const sumOfAges = people3.reduce((sum, person) => sum + parseInt(person.age), 0);
+      
+      // Calculate the average age
+      const averageAge = sumOfAges / people.length;
+      
+      console.log("Sum of Ages:", sumOfAges);
+      console.log("Average Age:", averageAge);
+      
+      
+      
