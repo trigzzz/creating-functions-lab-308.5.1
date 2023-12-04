@@ -147,4 +147,25 @@
       console.log("Average Age:", averageAge);
       
       
-      
+      // Part 3
+
+      function incrementAgeInPlace(obj) {
+        obj.age = obj.age ? obj.age + 1 : 0;
+        obj.updated_at = new Date();
+    }
+    
+    const person = { id: "42", name: "Bruce", occupation: "Knight" };
+    incrementAgeInPlace(person);
+    console.log(person);
+    
+    function incrementAgeWithCopyAndReturn(obj) {
+        const copy = { ...obj, age: obj.age ? obj.age + 1 : 0, updated_at: new Date() };
+        return copy;
+    }
+    
+    const originalPerson = { id: "42", name: "Bruce", occupation: "Knight" };
+    const updatedCopy = incrementAgeWithCopyAndReturn(originalPerson);
+    
+    console.log("Original:", originalPerson);
+    console.log("Copy:", updatedCopy);
+    
